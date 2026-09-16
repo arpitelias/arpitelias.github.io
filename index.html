@@ -4,27 +4,95 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arpit Joshua Elias</title>
+<meta name="description" content="I catch bad data before it becomes a confident wrong answer. Operations background, MSc in Artificial Intelligence.">
+<link rel="icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <style>
-:root { --text:#1A1A1A; --bg:#FAFAF8; --accent:#2D5F5D; --muted:#6B6B6B; }
+:root { --text:#1A1A1A; --bg:#FAFAF8; --accent:#2D5F5D; --muted:#6B6B6B; --line:#E4E4E0; }
 * { box-sizing:border-box; }
-body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,sans-serif; line-height:1.6; }
-main { max-width:38rem; margin:0 auto; padding:6rem 1.5rem; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,sans-serif; line-height:1.65; }
+main { max-width:38rem; margin:0 auto; padding:5rem 1.5rem 6rem; }
 h1 { font-family:"Source Serif 4",Georgia,serif; font-weight:600; font-size:2rem; line-height:1.25; margin:0 0 1.25rem; }
-p { margin:0 0 1.5rem; }
+h2 { font-family:"Source Serif 4",Georgia,serif; font-weight:600; font-size:1.25rem; margin:3rem 0 1rem; }
+p { margin:0 0 1.25rem; }
+a { color:var(--accent); }
+.lead { font-size:1.05rem; }
 .muted { color:var(--muted); font-size:0.95rem; }
-a.cta { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:0.75rem 1.25rem; border-radius:6px; font-weight:500; }
-a.cta:hover { opacity:0.9; }
+.cta { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:0.75rem 1.25rem; border-radius:6px; font-weight:500; margin:0.5rem 0 1rem; }
+.cta:hover { opacity:0.9; }
+ul { padding-left:1.1rem; margin:0 0 1.25rem; }
+li { margin-bottom:0.5rem; }
+hr { border:0; border-top:1px solid var(--line); margin:3rem 0; }
+footer { font-size:0.9rem; color:var(--muted); }
+footer a { margin-right:1rem; display:inline-block; }
 </style>
 </head>
 <body>
 <main>
+
 <h1>Wrong data doesn't look wrong. That's the problem I work on.</h1>
-<p>I catch bad data before it becomes a confident wrong answer. Operations background, MSc in Artificial Intelligence.</p>
-<p class="muted">Site in progress. Case studies going up shortly.</p>
+
+<p class="lead">I catch bad data before it becomes a confident wrong answer. Operations background, MSc in Artificial Intelligence, based in Ireland.</p>
+
 <p><a class="cta" href="https://cal.com/arpitjoshuaelias/15min">Book 15 minutes</a></p>
+
+<hr>
+
+<h2>An error that left no trace in the file</h2>
+
+<p>A year of sales records, around 400,000 rows, was due to go to a modelling team. An advertising spend decision was waiting on the output.</p>
+
+<p>Someone asked me to check the batch against the raw invoices. That check wasn't standard. It happened because a person thought to ask.</p>
+
+<p>The totals ran high. Refunds hadn't been entered, so money that went back out to customers was never subtracted. The file itself looked correct, and that's the part worth sitting with. A missing record leaves nothing behind. No blank cell, no broken format, no outlier to catch your eye. Validation rules check what's there. Nothing in a file can tell you about a row that was never written. The only way to see it was against the source.</p>
+
+<p>I escalated. The batch was held and never reached the modelling team. My manager corrected the data. Afterwards a screen was built that flags missing payouts against expected variance, and I tested it.</p>
+
+<p>The forecast would have run cleanly on those numbers. It would have produced a confident figure, the spend decision would have been made on it, and nobody would have known.</p>
+
+<p class="muted">I found this error. I didn't design the reconciliation and I didn't build the screen. The check ran because someone requested it, not because a control required it. That's the actual finding: a pipeline moving hundreds of thousands of records had no standing reconciliation against source, and the gap stayed invisible until somebody happened to ask.</p>
+
+<hr>
+
+<h2>About</h2>
+
+<p>I spent my working life in operations before I studied AI. That's the wrong order on paper and the right one in practice. Operations is where data gets created, and where the errors start. Most people who can build a model have only ever seen data downstream, already cleaned, already in a warehouse.</p>
+
+<p>I finished an MSc in Artificial Intelligence at National College of Ireland in 2026. So I know what a model does with quietly wrong inputs: it produces a confident answer and gives you no reason to doubt it.</p>
+
+<p>That's the gap I work in.</p>
+
+<hr>
+
+<h2>Writing</h2>
+
+<p class="muted">Notes on data quality and what I'm building. First posts going up shortly.</p>
+
+<hr>
+
+<h2>Get in touch</h2>
+
+<p>If any of this sounds like a problem you have, book fifteen minutes. No preparation needed.</p>
+
+<ul>
+<li>Based in Ireland, available now</li>
+<li>Looking for data governance and data quality work, ideally in pharma</li>
+<li>Happy to work inside your environment and under your access rules</li>
+</ul>
+
+<p><a class="cta" href="https://cal.com/arpitjoshuaelias/15min">Book 15 minutes</a></p>
+
+<hr>
+
+<footer>
+<a href="https://www.linkedin.com/in/arpit-joshua-e-8912b013a">LinkedIn</a>
+<a href="https://github.com/arpitelias">GitHub</a>
+<a href="/cv.pdf">CV</a>
+<a href="https://cal.com/arpitjoshuaelias/15min">Book a call</a>
+</footer>
+
 </main>
 </body>
 </html>
