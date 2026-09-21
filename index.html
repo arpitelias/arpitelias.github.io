@@ -42,6 +42,10 @@ input, textarea { width:100%; font-family:inherit; font-size:1rem; color:var(--t
 input:focus, textarea:focus { outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
 textarea { min-height:8rem; resize:vertical; }
 .hp { position:absolute; left:-5000px; }
+figure { margin:0 0 1.5rem; }
+figure img { display:block; max-width:100%; height:auto; border:1px solid var(--line); border-radius:6px; background:#fff; padding:0.5rem; }
+figcaption { font-size:0.85rem; color:var(--muted); margin-top:0.4rem; }
+ol { padding-left:1.25rem; margin:0 0 1.25rem; }
 footer { font-size:0.9rem; color:var(--muted); }
 footer a { margin-right:1.25rem; display:inline-flex; align-items:center; min-height:44px; padding:0 0.25rem; }
 .cta { min-height:44px; }
@@ -80,19 +84,52 @@ footer a { margin-right:1.25rem; display:inline-flex; align-items:center; min-he
 
 <hr>
 
+<h2>Checking the data before trusting the model</h2>
+
+<p>On my FlyRank internship I worked with an anonymised search-performance warehouse: one month of daily records came to 9.8 million rows. The job was to score which pages were losing clicks they should be getting. Before building anything, I wrote down what one row meant and checked it with queries.</p>
+
+<p>The first check changed the whole project. The flag saying whether search data was available was true on only 36.7% of rows. My label came from that search data, so nearly two thirds of the month could never carry an answer. Counting rows would have suggested far more to work with than existed.</p>
+
+<figure>
+<img src="case-availability.png" alt="Query output: 3,611,061 rows and 176,738 pages survive the availability filter" width="412" height="68" loading="lazy">
+<figcaption>Rows that survive the availability filter, out of 9,841,378 in the month.</figcaption>
+</figure>
+
+<p>I then broke the model on purpose. I added one feature that was secretly the answer in disguise. The model scored a perfect 1.000. Removing it gave 0.763. A perfect score on held-out data is the symptom, not the achievement.</p>
+
+<figure>
+<img src="case-leak.png" alt="Model output: held-out AUC 1.000 with the leaked feature, 0.763 without it" width="520" height="65" loading="lazy">
+<figcaption>The same model, with and without the leaked feature.</figcaption>
+</figure>
+
+<p>Weeks later I audited my own finished model and found I had made a quieter version of the same mistake. The way I had defined the label meant 17,188 pages, a fifth of the data, could only ever be scored zero. The model had learned my definition rather than anything real. Taking those pages out, its measured skill fell from 0.722 to 0.593.</p>
+
+<p>In the end a simple rule outranked every model I trained. Its headline precision was 0.98, but that was carried by the largest client; across the other nine it ranged from 0.64 to 0.96.</p>
+
+<p class="muted">This was an internship dataset, anonymised, not a live business. The results are observed on one month of inputs and one month of outcomes, and I report them as that.</p>
+
+<hr>
+
+<h2>How I check data now</h2>
+
+<ol>
+<li>Where a source exists, reconcile against it. Validation only checks what is present; it cannot see a row that was never written.</li>
+<li>Count how much of the data can actually carry the answer before counting how much data there is.</li>
+<li>Treat a near-perfect result as a symptom to investigate, and check whether the label was built from the inputs.</li>
+<li>Write down what I will not claim, and keep it next to what I will.</li>
+</ol>
+
+<hr>
+
 <h2>About</h2>
 
 <p>I spent my working life in operations before I studied AI. That's the wrong order on paper and the right one in practice. Operations is where data gets created, and where the errors start. Most people who can build a model have only ever seen data downstream, already cleaned, already in a warehouse.</p>
 
-<p>I finished an MSc in Artificial Intelligence at National College of Ireland in 2026. So I know what a model does with quietly wrong inputs: it produces a confident answer and gives you no reason to doubt it.</p>
+<p>I completed an MSc in Artificial Intelligence at National College of Ireland in 2026. So I know what a model does with quietly wrong inputs: it produces a confident answer and gives you no reason to doubt it.</p>
+
+<p>My thesis worked with GMP-compliant pharmaceutical manufacturing data: batch, process and sensor records. That is academic exposure, not professional. I have not worked in a GxP environment, and I would expect to learn its audit and validation practice on the job. What carries over is the habit: check the data against its source before trusting anything built on it.</p>
 
 <p>That's the gap I work in.</p>
-
-<hr>
-
-<h2>Writing</h2>
-
-<p class="muted">Notes on data quality and what I'm building. First posts going up shortly.</p>
 
 <hr>
 
