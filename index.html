@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arpit Joshua Elias</title>
+<title>Arpit Joshua Elias | Data quality and governance, Ireland</title>
+<link rel="canonical" href="https://arpitelias.github.io/">
 <meta name="description" content="I catch bad data before it becomes a confident wrong answer. Operations background, MSc in Artificial Intelligence.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -16,10 +17,12 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/source-serif-600.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face { font-family:"Inter"; src:url("/fonts/inter-400.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("/fonts/inter-500.woff2") format("woff2"); font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:"Source Serif 4"; src:url("/fonts/source-serif-600.woff2") format("woff2"); font-weight:600; font-style:normal; font-display:swap; }
 :root { --text:#1A1A1A; --bg:#FAFAF8; --accent:#2D5F5D; --muted:#6B6B6B; --line:#E4E4E0; }
 * { box-sizing:border-box; }
 body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,sans-serif; line-height:1.65; }
@@ -157,6 +160,7 @@ footer a { margin-right:1.25rem; display:inline-flex; align-items:center; min-he
 <label for="message">Message</label>
 <textarea id="message" name="message" required></textarea>
 <input type="hidden" name="_subject" value="Portfolio contact form">
+<input type="hidden" name="_next" value="https://arpitelias.github.io/thanks.html">
 <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
 <button class="cta" type="submit">Send</button>
 </form>
